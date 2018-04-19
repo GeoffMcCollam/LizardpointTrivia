@@ -23,6 +23,8 @@ import android.util.Log;
 public class BackgroundTask extends AsyncTask<String,Void,String> {
     AlertDialog alertDialog;
     Context ctx;
+
+    //where to send the result back to, set in parent activity
     public AsyncResponse delegate = null;
 
     BackgroundTask(Context ctx)
@@ -34,12 +36,19 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
         alertDialog = new AlertDialog.Builder(ctx).create();
         alertDialog.setTitle("Searching for quiz...");
     }
+
+    //get result logic
+    //take parameters, method and quiz id
+    //method is used to devide what this function will do, currently only getQuiz
+    //quiz id or date is which quiz we're trying to find from the server
     @Override
     protected String doInBackground(String... params) {
+        //getQuiz.php when receiving a quiz id through POST sends back all of the questions and answers for that quiz
         String getQuiz_url = "https://lizardpoint.com/shared/php/getQuiz.php";
         String method = params[0];
+        //we're getting a quiz
         if (method.equals("getQuiz")) {
-            String date = params[1];
+            String date = params[1]; //probably should be called quiz id, but it's a date as well so whatever
             try {
                 //Connect to lizardpoint
                 URL url = new URL(getQuiz_url);
@@ -49,7 +58,8 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
                 //send quiz id / date as POST variable to lizardpoint
                 OutputStream OS = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS, "UTF-8"));
-                String data = URLEncoder.encode("quizdate", "UTF-8") + "=" + URLEncoder.encode(date, "UTF-8");
+                //Original: String data = URLEncoder.encode("quizdate","UTF-8") + "=" + URLEncoder.encode(date, "UTF-8");
+                String data = URLEncoder.encode("quizdate","UTF-8") + "=" + URLEncoder.encode(date, "UTF-8");
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -61,6 +71,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
                 String line = "";
                 while ((line = bufferedReader.readLine()) != null){
                     response += line;
+                    Log.v("RESPONSE: ", response);
                 }
                 bufferedReader.close();
                 IS.close();
@@ -79,10 +90,16 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     protected void onProgressUpdate(Void... values) {
         super.onProgressUpdate(values);
     }
+
+    //when doInBackground finishes, this function is called and given the return result
     @Override
     protected void onPostExecute(String result) {
+        if (result == null){
+            alertDialog.setMessage("There may be problems with your internet.");
+            alertDialog.show();
+        }
         // 0 indicates no errors
-        if(result.charAt(0) == '0')
+        else if(result.charAt(0) == '0')
         {
             //parse data from response
             String[] questions = result.split(";");
@@ -91,6 +108,8 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
             for (int i=1; i<11; i++){
                 Question q = new Question(questions[i]);
                 quiz.LoadQuestion(q);
+                //Log.v("BT", "Current question: " + quiz.getQuestion(i).getQuestion());
+                //Log.v("BT", "Current answer: " + quiz.getQuestion(i).getAnswerList()[0]);
             }
             //send quiz object back to activity
             delegate.processFinish(quiz);

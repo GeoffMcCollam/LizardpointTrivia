@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.lizardpoint.lizardpointtrivia.StatsActivity">
+
+    <!--Displays information based on users results (quiz ID, high score, previous score)-->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:width="350dp"
+        android:text="DEFAULT QUESTION TEXT"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Scrollview that stores all users answers (next nested elements)-->
+    <ScrollView
+        android:id="@+id/scroll1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="10dp"
+        android:scrollbarStyle="outsideOverlay"
+        app:layout_constraintBottom_toTopOf="@id/homeButton"
+        app:layout_constraintTop_toBottomOf="@id/titleText">
+
+        <!--Easily view and store nested textviews-->
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <!--Display info for question 1-->
+            <TextView
+                android:id="@+id/q1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="q1"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q1ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q1Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q1ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q1AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q1Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q1Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q1AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+            <!--Display info for question 2-->
+            <TextView
+                android:id="@+id/q2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="q2"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q2ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q2Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q2ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q2AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q2Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q2Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q2AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <!--Display info for question 3-->
+            <TextView
+                android:id="@+id/q3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="q3"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q3ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q3Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q3ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q3AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q3Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q3Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q3AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <!--Display info for question 4-->
+            <TextView
+                android:id="@+id/q4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="q4"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q4ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q4Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q4ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q4AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q4Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q4Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q4AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <!--Display info for question 5-->
+            <TextView
+                android:id="@+id/q5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="q5"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q5ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q5Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q5ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q5AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q5Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q5Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q5AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <!--Display info for question 6-->
+            <TextView
+                android:id="@+id/q6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="q6"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q6ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q6Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q6ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q6AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q6Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q6Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q6AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <!--Display info for question 7-->
+            <TextView
+                android:id="@+id/q7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="q7"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q7ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q7Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q7ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q7AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q7Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q7Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q7AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <!--Display info for question 8-->
+            <TextView
+                android:id="@+id/q8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="q8"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q8ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q8Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q8ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q8AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q8Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q8Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q8AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <!--Display info for question 9-->
+            <TextView
+                android:id="@+id/q9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="q9"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q9ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q9Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q9ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q9AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q9Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q9Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q9AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+            <!--Display info for question 10-->
+            <TextView
+                android:id="@+id/q10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="q10"
+                android:textSize="14sp" />
+
+            <!--This'll be used to contain the images for question side-by-side-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/q10ChoiceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Choice: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q10Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/q10ChoiceText"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q10AnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/q10Choice"
+                    android:text="Correct Answer: "
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/q10Answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/q10AnswerText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--Button to return to main menu-->
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:width="250dp"
+        android:background="@drawable/button"
+        android:onClick="homeOnClick"
+        android:text="MAIN MENU"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/titleText"
+        app:layout_constraintRight_toRightOf="@id/titleText"
+        app:layout_constraintTop_toBottomOf="@+id/scroll1" />
+</android.support.constraint.ConstraintLayout>

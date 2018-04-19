@@ -4,24 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context="com.lizardpoint.lizardpointtrivia.MainActivity">
 
-    <TextView
+    <!--Button to start a random quiz-->
+    <Button android:id="@+id/quiz01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="PLAY RANDOM QUIZ"
+        android:layout_gravity="center_horizontal"
+        android:onClick="findQuiz"
+        android:width="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/button"
+        />
 
-    <Button
+    <!--Button to view all current user stats-->
+    <Button android:id="@+id/results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find quiz"
+        android:text="DISPLAY QUIZ SCORES"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:onClick="findQuiz"
-    />
-
+        android:onClick="displayResults"
+        android:width="300dp"
+        app:layout_constraintTop_toBottomOf="@id/quiz01"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:background="@drawable/button"
+        />
 </android.support.constraint.ConstraintLayout>

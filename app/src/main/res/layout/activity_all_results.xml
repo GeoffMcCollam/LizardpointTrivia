@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.lizardpoint.lizardpointtrivia.AllStatsActivity">
+
+    <!--Stores all following textviews for easy displaying-->
+    <LinearLayout android:id="@+id/linearAll"
+        android:paddingTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:gravity="left"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Stores content of the first quiz-->
+        <TextView android:id="@+id/results201503"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="201503"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp">
+        </TextView>
+
+        <!--Stores content of the second quiz-->
+        <TextView android:id="@+id/results201511"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="201511"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp">
+        </TextView>
+
+        <!--Stores content of the third quiz-->
+        <TextView android:id="@+id/results201512"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="201512"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp">
+        </TextView>
+
+        <!--Stores content of the fourth quiz-->
+        <TextView android:id="@+id/results201514"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="201514"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp">
+        </TextView>
+
+        <!--Stores content of the fifth quiz-->
+        <TextView android:id="@+id/results201531"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="201531"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp">
+        </TextView>
+
+        <!--Stores content of the sixth quiz-->
+        <TextView android:id="@+id/results201534"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="201534"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp">
+        </TextView>
+    </LinearLayout>
+
+    <!--Takes you back to previous activity (main menu)-->
+    <Button android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO BACK"
+        android:width="200dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearAll"
+        app:layout_constraintLeft_toLeftOf="@id/linearAll"
+        app:layout_constraintRight_toRightOf="@id/linearAll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="25dp"
+        android:onClick="backClick"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:background="@drawable/button"
+        />
+</android.support.constraint.ConstraintLayout>

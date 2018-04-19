@@ -1,4 +1,6 @@
 package com.lizardpoint.lizardpointtrivia;
+import android.util.Log;
+
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.*;
 /**
@@ -49,5 +51,7 @@ public class Question {
         return option;
     }
 
+    public String getCorrectAnswer() { return correctAnswer; }
 
+    public String getQFormat() { return respType; }
 }
