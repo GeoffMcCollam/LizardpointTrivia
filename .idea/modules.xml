@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/LizardpointTrivia.iml" filepath="$PROJECT_DIR$/.idea/LizardpointTrivia.iml" />
       <module fileurl="file://$PROJECT_DIR$/LizardpointTrivia-master-04-19-18.iml" filepath="$PROJECT_DIR$/LizardpointTrivia-master-04-19-18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

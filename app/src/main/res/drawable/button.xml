@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <stroke android:width="0.25dp"
-        android:color="@color/border"/>
+    <stroke
+        android:width="0.25dp"
+        android:color="@color/border" />
     />
     <!--sets the buttons corners-->
-    <corners
-        android:radius="90dp"
-        />
+    <corners android:radius="90dp" />
     <!--sets button bg colour-->
-    <solid
-        android:color="@color/bg"
-        />
+    <solid android:color="@color/bg" />
 </shape>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Lizardpoint Trivia</string>
+    <string name="title_activity_profile_stats">ProfileStatsActivity</string>
+    <string name="start_quiz">START QUIZ</string>
+    <string name="quiz_results">RESULTS</string>
+    <string name="back_button">BACK</string>
+    <string name="home_button">HOME</string>
+    <string name="question_placeholder">DEFAULT QUESTION TEXT</string>
 </resources>

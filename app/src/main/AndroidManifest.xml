@@ -3,7 +3,7 @@
     package="com.lizardpoint.lizardpointtrivia">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,8 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuizActivity"></activity>
-        <activity android:name=".StatsActivity"></activity>
-        <activity android:name=".AllStatsActivity"></activity>
+        <activity android:name=".QuizActivity" />
+        <activity android:name=".StatsActivity" />
+        <activity android:name=".AllStatsActivity" />
     </application>
+
 </manifest>

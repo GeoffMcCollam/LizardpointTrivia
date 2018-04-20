@@ -8,117 +8,145 @@
     tools:context="com.lizardpoint.lizardpointtrivia.QuizActivity">
 
     <!--Displays question to user-->
-    <TextView android:id="@+id/qQuestion"
+    <TextView
+        android:id="@+id/qQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="DEFAULT QUESTION TEXT"
-        android:layout_marginTop="75dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
+        android:text="string@/question_placeholder"
+        android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
-        android:textAlignment="center"/>
+        app:layout_constraintBottom_toTopOf="@+id/linearQ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--Stores all nested buttons in a neat manor-->
-    <LinearLayout android:id="@+id/linearQ"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+    <LinearLayout
+        android:id="@+id/linearQ"
+        android:layout_width="368dp"
+        android:layout_height="381dp"
+        android:background="#f2f2f2"
         android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        >
-        <!--Stores information passed for the first string answer-->
-        <Button android:id="@+id/qAnswer1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BUTTON TEXT 01"
-            android:width="300dp"
-            android:layout_marginTop="10dp"
-            android:onClick="buttonOnClick01"
-            android:background="@drawable/button"
-            />
-
-        <!--Stores information passed for the first image answer-->
-        <ImageButton android:id="@+id/qAnswer1IMG"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BUTTON IMG 01"
-            android:width="300dp"
-            android:layout_marginTop="10dp"
-            android:onClick="buttonOnClick01"
-            />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qQuestion">
 
         <!--Stores information passed for the second string answer-->
-        <Button android:id="@+id/qAnswer2"
+        <Button
+            android:id="@+id/qAnswer1"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:width="300dp"
+            android:backgroundTint="#1bec68"
+            android:onClick="buttonOnClick01"
+            android:text="BUTTON TEXT 01"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="199dp"
+            tools:layout_editor_absoluteY="424dp" />
+
+        <ImageButton
+            android:id="@+id/qAnswer1IMG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BUTTON TEXT 02"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:width="300dp"
-            android:layout_marginTop="10dp"
+            android:onClick="buttonOnClick01"
+            android:text="BUTTON IMG 01" />
+
+        <Button
+            android:id="@+id/qAnswer2"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:width="300dp"
+            android:backgroundTint="#ffb600"
             android:onClick="buttonOnClick02"
-            android:background="@drawable/button"
-            />
+            android:text="BUTTON TEXT 02"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="199dp"
+            tools:layout_editor_absoluteY="424dp" />
 
         <!--Stores information passed for the second image answer-->
-        <ImageButton android:id="@+id/qAnswer2IMG"
+        <ImageButton
+            android:id="@+id/qAnswer2IMG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BUTTON IMG 02"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:width="300dp"
-            android:layout_marginTop="10dp"
             android:onClick="buttonOnClick02"
-            />
+            android:text="BUTTON IMG 02" />
 
         <!--Stores information passed for the third string answer-->
-        <Button android:id="@+id/qAnswer3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BUTTON TEXT 03"
+        <Button
+            android:id="@+id/qAnswer3"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
             android:width="300dp"
-            android:layout_marginTop="10dp"
+            android:backgroundTint="#ec1b1b"
             android:onClick="buttonOnClick03"
-            android:background="@drawable/button"
-            />
+            android:text="BUTTON TEXT 03"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="199dp"
+            tools:layout_editor_absoluteY="424dp" />
+
 
         <!--Stores information passed for the third image answer-->
-        <ImageButton android:id="@+id/qAnswer3IMG"
+        <ImageButton
+            android:id="@+id/qAnswer3IMG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BUTTON IMG 03"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:width="300dp"
-            android:layout_marginTop="10dp"
             android:onClick="buttonOnClick03"
-            />
+            android:text="BUTTON IMG 03" />
 
         <!--Stores information passed for the fourth string answer-->
-        <Button android:id="@+id/qAnswer4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BUTTON TEXT 04"
+        <Button
+            android:id="@+id/qAnswer4"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
             android:width="300dp"
-            android:layout_marginTop="10dp"
+            android:backgroundTint="#6086bf"
             android:onClick="buttonOnClick04"
-            android:background="@drawable/button"
-            />
+            android:text="BUTTON TEXT 04"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="199dp"
+            tools:layout_editor_absoluteY="424dp" />
+
 
         <!--Stores information passed for the fourth image answer-->
-        <ImageButton android:id="@+id/qAnswer4IMG"
+        <ImageButton
+            android:id="@+id/qAnswer4IMG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BUTTON IMG 04"
+            android:layout_marginTop="5dp"
             android:width="300dp"
-            android:layout_marginTop="10dp"
             android:onClick="buttonOnClick04"
-            />
+            android:text="BUTTON IMG 04" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
