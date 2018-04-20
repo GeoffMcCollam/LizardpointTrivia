@@ -12,37 +12,36 @@
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
         android:width="350dp"
         android:text="DEFAULT QUESTION TEXT"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/scroll1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--Button to return to main menu-->
 
     <!--Scrollview that stores all users answers (next nested elements)-->
     <ScrollView
         android:id="@+id/scroll1"
-        android:layout_width="371dp"
-        android:layout_height="301dp"
+        android:layout_width="match_parent"
+        android:layout_height="305dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
         android:paddingTop="10dp"
         android:scrollbarStyle="outsideOverlay"
-        app:layout_constraintBottom_toTopOf="@+id/resultsBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleText">
+        app:layout_constraintBottom_toTopOf="@+id/shareButton"
+        app:layout_constraintTop_toBottomOf="@id/titleText">
 
         <!--Easily view and store nested textviews-->
         <LinearLayout
             android:id="@+id/linear1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="left"
             android:orientation="vertical">
 
@@ -50,8 +49,7 @@
             <TextView
                 android:id="@+id/q1"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:text="q1"
                 android:textSize="14sp" />
 
@@ -96,9 +94,8 @@
             <TextView
                 android:id="@+id/q2"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
                 android:text="q2"
                 android:textSize="14sp" />
 
@@ -142,9 +139,8 @@
             <TextView
                 android:id="@+id/q3"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
                 android:text="q3"
                 android:textSize="14sp" />
 
@@ -188,9 +184,8 @@
             <TextView
                 android:id="@+id/q4"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
                 android:text="q4"
                 android:textSize="14sp" />
 
@@ -234,9 +229,8 @@
             <TextView
                 android:id="@+id/q5"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
                 android:text="q5"
                 android:textSize="14sp" />
 
@@ -280,9 +274,8 @@
             <TextView
                 android:id="@+id/q6"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
                 android:text="q6"
                 android:textSize="14sp" />
 
@@ -326,9 +319,8 @@
             <TextView
                 android:id="@+id/q7"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
                 android:text="q7"
                 android:textSize="14sp" />
 
@@ -372,9 +364,8 @@
             <TextView
                 android:id="@+id/q8"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
                 android:text="q8"
                 android:textSize="14sp" />
 
@@ -418,9 +409,8 @@
             <TextView
                 android:id="@+id/q9"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
                 android:text="q9"
                 android:textSize="14sp" />
 
@@ -465,9 +455,8 @@
             <TextView
                 android:id="@+id/q10"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_weight="1"
                 android:text="q10"
                 android:textSize="14sp" />
 
@@ -509,6 +498,24 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <!--Button to return to main menu-->
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="120dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="36dp"
+        android:width="250dp"
+        android:background="@drawable/button"
+        android:onClick="homeOnClick"
+        android:text="MAIN MENU"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/titleText"
+        app:layout_constraintRight_toRightOf="@id/titleText" />
+
 
     <Button
         android:id="@+id/shareButton"
