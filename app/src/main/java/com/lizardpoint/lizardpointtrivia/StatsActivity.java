@@ -1,11 +1,13 @@
 package com.lizardpoint.lizardpointtrivia;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ import java.util.regex.Pattern;
 public class StatsActivity extends AppCompatActivity {
 
     Database myDB;
+    String shareScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +74,7 @@ public class StatsActivity extends AppCompatActivity {
         //displays text from string buffers to show the user their results
         final TextView tv = (TextView) findViewById(R.id.titleText);
         tv.setText("CURRENT SCORE: " + x + "\n" + sbT.toString() + "\n" + sbP.toString());
-
+        shareScore = String.valueOf(x*10);
         //passes the answer information to the text view setting function
         setTextViews(getUser, getCorrect, questionAsked, questResType);
 
@@ -188,6 +191,28 @@ public class StatsActivity extends AppCompatActivity {
         finish();
         setContentView(R.layout.activity_main);
         overridePendingTransition(R.anim.anim01, R.anim.anim02);
+    }
+
+
+    //button to share results
+    Button bt;
+
+    //on Click for our SHARE Button
+    public void shareButton(View v) {
+        bt = (Button) findViewById(R.id.shareButton);
+        bt.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String shareBody = ("I just got a score of " + shareScore +"% on the app, Lizardpoint Trivia!" +
+                        " Test your knowledge and compare :)\n\nPlay here: http://lizardpoint.com/");
+                String shareSubject = "This is QUIZ Subject";
+                myIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
+                myIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(myIntent, "Share Quiz Score Using"));
+            }
+        }));
     }
 
     @Override
